@@ -1,11 +1,11 @@
-import { View, Text, Image, FlatList } from "react-native";
+import { View, Text, Image, FlatList, ActivityIndicator } from "react-native";
 import React, { useEffect, useState } from "react";
 import { query, getDocs, collection } from "firebase/firestore";
 import { db } from "../../config/FirebaseConfig";
+import { Colors } from "@/constants/Colors";
 
 export default function Slider() {
   const [sliderList, setsliderList] = useState([]);
-
   useEffect(() => {
     getSliderList();
   }, []);
@@ -53,16 +53,7 @@ export default function Slider() {
             )}
           />
         ) : (
-          <Text
-            style={{
-              fontFamily: "outfit-medium",
-              fontSize: 40,
-              marginTop: 25,
-              textAlign: "center",
-            }}
-          >
-            Loading...
-          </Text>
+          <ActivityIndicator size={"large"} color={Colors.PRIMARY} />
         )}
       </View>
     </View>

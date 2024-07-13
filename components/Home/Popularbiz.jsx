@@ -3,7 +3,7 @@ import { Colors } from "@/constants/Colors";
 import React, { useState, useEffect } from "react";
 import { query, getDocs, collection } from "firebase/firestore";
 import { db } from "@/config/FirebaseConfig";
-import Popularitem from "./Popularitem";
+import Popularitem from "./PopularItem";
 export default function Popularbiz() {
   const [popularlist, setpopularlist] = useState([]);
 
