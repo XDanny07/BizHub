@@ -1,9 +1,8 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
-import { router, useRouter } from "expo-router";
+import { router } from "expo-router";
 export default function Intro({ business }) {
-  const route = useRouter();
   return (
     <View>
       <View
@@ -15,7 +14,7 @@ export default function Intro({ business }) {
           justifyContent: "space-between",
           alignContent: "center",
           width: "100%",
-          padding: 20,
+          padding: 22,
         }}
       >
         <TouchableOpacity onPress={() => router.back()}>

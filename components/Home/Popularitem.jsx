@@ -1,11 +1,14 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
+import { useRouter } from "expo-router";
 
 export default function Popularitem({ Business }) {
+  const route = useRouter();
   //   console.log(Business.item.imageURL);
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => route.push("/businessdetail/" + Business?.id)}
       style={{
         marginLeft: 20,
         padding: 10,
@@ -65,6 +68,6 @@ export default function Popularitem({ Business }) {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }

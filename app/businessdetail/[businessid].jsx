@@ -7,6 +7,7 @@ import { Colors } from "../../constants/Colors";
 import Intro from "../../components/BusinessDetail/Intro";
 import ActionButton from "../../components/BusinessDetail/ActionButton";
 import About from "../../components/BusinessDetail/About";
+import Reviews from "../../components/BusinessDetail/Reviews";
 
 export default function BusinessDetail() {
   const navigate = useNavigation();
@@ -24,7 +25,7 @@ export default function BusinessDetail() {
     const q = doc(collection(db, "BusinessList"), businessid);
     const querysnapshot = await getDoc(q);
     if (querysnapshot.exists()) {
-      setbusinessdetail(querysnapshot.data());
+      setbusinessdetail({ id: querysnapshot.id, ...querysnapshot.data() });
     } else {
       console.log("Document doesn't exists");
     }
@@ -44,6 +45,7 @@ export default function BusinessDetail() {
             <Intro business={businessdetail} />
             <ActionButton business={businessdetail} />
             <About business={businessdetail} />
+            <Reviews business={businessdetail} />
           </View>
         )}
       </View>

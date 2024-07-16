@@ -15,7 +15,7 @@ export default function Popularbiz() {
     const querysnapshot = await getDocs(q);
     let list = [];
     querysnapshot.forEach((doc) => {
-      list.push(doc.data());
+      list.push({ id: doc?.id, ...doc.data() });
     });
     setpopularlist(list);
   };
