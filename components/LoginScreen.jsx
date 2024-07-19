@@ -45,10 +45,10 @@ export default function LoginScreen() {
         <Image
           style={{
             height: 600,
-            objectFit: "contain",
-            // borderColor: "#000",
-            // borderWidth: 6,
-            // borderRadius: 20,
+            width: 300,
+            borderColor: "#000",
+            borderWidth: 6,
+            borderRadius: 20,
           }}
           source={require("../assets/images/BizHubApp.png")}
         />

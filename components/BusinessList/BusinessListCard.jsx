@@ -3,7 +3,7 @@ import React from "react";
 import { Colors } from "../../constants/Colors";
 import { useRouter } from "expo-router";
 
-export default function BusinessListCard({ business, index }) {
+export default function BusinessListCard({ business }) {
   const route = useRouter();
   return (
     <TouchableOpacity
